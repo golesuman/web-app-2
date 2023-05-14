@@ -10,15 +10,33 @@ function Navbar() {
   return (
     <div className="nav-bar">
       <div className="left">
-        <h2>G-Store</h2>
+        <Link style={{ textDecoration: "none", color: "black" }} to="/">
+          <h2>G-Store</h2>
+        </Link>
       </div>
       <div className="center">
         <ul className="list">
-          <li className="item">Jacket</li>
-          <li className="item">Shoes</li>
-          <li className="item">Shirts</li>
-          <li className="item">Pants</li>
-          <li className="item">All Products</li>
+          <Link style={{ textDecoration: "none", color: "black" }} to="/jacket">
+            <li className="item">Jacket</li>
+          </Link>
+          <Link style={{ textDecoration: "none", color: "black" }} to="/jacket">
+            <li className="item">Shoes</li>
+          </Link>
+
+          <Link style={{ textDecoration: "none", color: "black" }} to="/shirts">
+            <li className="item">Shirts</li>
+          </Link>
+
+          <Link style={{ textDecoration: "none", color: "black" }} to="/jacket">
+            <li className="item">Pants</li>
+          </Link>
+
+          <Link
+            style={{ textDecoration: "none", color: "black" }}
+            to="/products"
+          >
+            <li className="item">All Products</li>
+          </Link>
         </ul>
       </div>
       <div className="right">
@@ -29,9 +47,15 @@ function Navbar() {
           {/* <SearchOutlinedIcon /> */}
         </div>
         <div className="icons">
-          <ShoppingBagOutlinedIcon />
-          <FavoriteBorderOutlinedIcon />
-          <PersonOutlineOutlinedIcon />
+          <Link style={{ textDecoration: "none", color: "black" }} to="/cart">
+            <ShoppingBagOutlinedIcon />
+          </Link>
+          <Link style={{ textDecoration: "none", color: "black" }} to="/liked">
+            <FavoriteBorderOutlinedIcon />
+          </Link>
+          <Link style={{ textDecoration: "none", color: "black" }} to="/login">
+            <PersonOutlineOutlinedIcon />
+          </Link>
         </div>
       </div>
     </div>

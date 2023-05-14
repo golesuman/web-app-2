@@ -1,7 +1,7 @@
 import React from "react";
 
 function ProductDetails() {
-  return <div></div>;
+  return <div>Product Details</div>;
 }
 
 export default ProductDetails;
