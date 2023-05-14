@@ -1,0 +1,38 @@
+import React from "react";
+import "./Footer.scss";
+function Footer() {
+  return (
+    <div>
+      <div className="footer">
+        <div className="footer-title">
+          <h3>G-Store</h3>
+          <p>We are here to help you find products of your choice</p>
+        </div>
+        <div className="social-media">
+          <h3>Social Media</h3>
+          <ul className="social-media-list">
+            <li>
+              <a href="">Facebook</a>
+            </li>
+            <li>
+              <a href="">Instagram</a>
+            </li>
+            <li>
+              <a href="">TikTok</a>
+            </li>
+          </ul>
+        </div>
+        <div className="about">
+          <h3>About Us</h3>
+          <ul className="about-us">
+            <li>Contact</li>
+            <li>Privacy Policy</li>
+          </ul>
+        </div>
+      </div>
+      <p className="copyright">COPYRIGHT © 2023 - 2025 ALL RIGHTS RESERVED</p>
+    </div>
+  );
+}
+
+export default Footer;
