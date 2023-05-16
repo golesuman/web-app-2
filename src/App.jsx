@@ -11,7 +11,6 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 // }
 import ReactDOM from "react-dom";
 import Home from "./pages/Home/Home";
-import Esewa from "./pages/Esewa/Esewa";
 import Navbar from "./components/Nav/Navbar";
 import Products from "./pages/Products/Products";
 import Cart from "./pages/Cart";
@@ -34,8 +33,6 @@ export function App() {
           <Route path="/cart" element={<Cart />} />
           <Route path="/login" element={<LoginLogout />} />
           <Route path="/product/:id" element={<ProductDetails />} />
-          <Route path="/esewa" element={<Esewa />} />
-
           <Route path="*" element={<h1>Page Not Found</h1>} />
         </Routes>
       </Router>
