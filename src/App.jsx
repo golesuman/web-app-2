@@ -25,7 +25,9 @@ export function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/products" element={<Products />} />
-          <Route path="/shirts" element={<Products />} />
+          <Route path="/products?q=jacket" element={<Products />} />
+          <Route path="/products?q=pants" element={<Products />} />
+          <Route path="/products?q=shoes" element={<Products />} />
           <Route path="/likes" element={<Home />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="/login" element={<Login />} />

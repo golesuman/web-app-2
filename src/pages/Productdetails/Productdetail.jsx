@@ -2,7 +2,7 @@ import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlin
 import ShoppingBagOutlinedIcon from "@mui/icons-material/ShoppingBagOutlined";
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import "./Productdetail.scss";
 // const params = useParams<RouteParam>();
 // console.log(params.id);
@@ -81,8 +81,6 @@ function addToCart(productId) {
       console.log("Error adding product to cart:", error);
       // Handle error scenarios
     });
-
-
 }
 
 function addToWishlist(productId) {
@@ -96,8 +94,6 @@ function addToWishlist(productId) {
       console.log("Error adding product to wishlist:", error);
       // Handle error scenarios
     });
-
-
 }
 
 function ProductDetails() {

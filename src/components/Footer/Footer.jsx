@@ -12,13 +12,13 @@ function Footer() {
           <h3>Social Media</h3>
           <ul className="social-media-list">
             <li>
-              <a href="">Facebook</a>
+              <a href="https://www.facebook.com">Facebook</a>
             </li>
             <li>
-              <a href="">Instagram</a>
+              <a href="https://www.instagram.com">Instagram</a>
             </li>
             <li>
-              <a href="">TikTok</a>
+              <a href="https://www.tiktok.com">TikTok</a>
             </li>
           </ul>
         </div>

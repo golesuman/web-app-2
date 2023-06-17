@@ -14,18 +14,30 @@ function Navbar() {
       </div>
       <div className="center">
         <ul className="list">
-          <Link style={{ textDecoration: "none", color: "black" }} to="/jacket">
+          <Link
+            style={{ textDecoration: "none", color: "black" }}
+            to="/products?q=jacket"
+          >
             <li className="item">Jacket</li>
           </Link>
-          <Link style={{ textDecoration: "none", color: "black" }} to="/jacket">
+          <Link
+            style={{ textDecoration: "none", color: "black" }}
+            to="/products?q=shoe"
+          >
             <li className="item">Shoes</li>
           </Link>
 
-          <Link style={{ textDecoration: "none", color: "black" }} to="/shirts">
+          <Link
+            style={{ textDecoration: "none", color: "black" }}
+            to="/products?q=shirt"
+          >
             <li className="item">Shirts</li>
           </Link>
 
-          <Link style={{ textDecoration: "none", color: "black" }} to="/jacket">
+          <Link
+            style={{ textDecoration: "none", color: "black" }}
+            to="/products?q=pants"
+          >
             <li className="item">Pants</li>
           </Link>
 

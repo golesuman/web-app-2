@@ -1,11 +1,14 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
-import "./Product.scss";
+import { Link, useLocation } from "react-router-dom";
+import "./Products.scss";
 
 function Products() {
   // const data
-  const url = "http://localhost:8000/api/ecommerce/products";
+  const search = useLocation().search;
+  const q = new URLSearchParams(search).get("q");
+  const url = `http://localhost:8000/api/ecommerce/products?q=${q}`;
+
   const [posts, setPosts] = useState(null);
   useEffect(() => {
     const fetchData = async () => {
@@ -17,7 +20,7 @@ function Products() {
       }
     };
     fetchData();
-  }, []);
+  }, [url]);
 
   console.log(posts);
   if (!posts) return null;
