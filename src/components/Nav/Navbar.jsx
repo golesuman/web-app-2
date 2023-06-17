@@ -1,11 +1,9 @@
+import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlined";
 import PersonOutlineOutlinedIcon from "@mui/icons-material/PersonOutlineOutlined";
+import ShoppingBagOutlinedIcon from "@mui/icons-material/ShoppingBagOutlined";
 import React from "react";
-import { ReactDOM } from "react";
 import { Link } from "react-router-dom";
 import "./Navbar.scss";
-import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlined";
-import ShoppingBagOutlinedIcon from "@mui/icons-material/ShoppingBagOutlined";
-import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
 function Navbar() {
   return (
     <div className="nav-bar">

@@ -38,10 +38,18 @@
         // background-color: ;
         background-color: #ffd4d4;
       }
+      .favorite:hover {
+        cursor: pointer;
+        background-color: #ffbebe;
+      }
       .shopping-bag {
         background-color: #99ff99;
       }
-      .buy-now{
+      .shopping-bag:hover {
+        cursor: pointer;
+        background-color: #71ff71;
+      }
+      .buy-now {
         padding: 10px;
         margin-top: 0px;
         width: 200%;
@@ -50,9 +58,8 @@
         // background-color: gray;
         // font-
         // text-decoration: ;
-      
       }
-      .buy-now:hover{
+      .buy-now:hover {
         cursor: pointer;
         // box-shadow: #99ff99;
         background-color: rgb(214, 214, 214);

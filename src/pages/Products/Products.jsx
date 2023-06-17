@@ -1,10 +1,7 @@
-import { Link } from "react-router-dom";
 import axios from "axios";
-import React, { useEffect } from "react";
-import { useState, useContext } from "react";
+import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import "./Product.scss";
-import ShoppingBagOutlinedIcon from "@mui/icons-material/ShoppingBagOutlined";
-import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlined";
 
 function Products() {
   // const data
