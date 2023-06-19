@@ -24,10 +24,7 @@ function Cart() {
     <div className="posts">
       {cartItems.map((post) => (
         <div key={post.id} className="post">
-          <Link
-            style={{ textDecoration: "none", color: "black" }}
-            to={`/product/${post.id}`}
-          >
+          <Link style={{ textDecoration: "none", color: "black" }}>
             <img
               className="product-image"
               src={`http://localhost:8000/media/${post.product.image_url}`}
