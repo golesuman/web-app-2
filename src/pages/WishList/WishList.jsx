@@ -4,13 +4,12 @@ import { Link } from "react-router-dom";
 
 function Cart() {
   const [cartItems, setCartItems] = useState([]);
+  const url = "http://localhost:8000/api/ecommerce/wishlists";
 
   useEffect(() => {
     const fetchCartItems = async () => {
       try {
-        const response = await axios.get(
-          "http://localhost:8000/api/ecommerce/carts"
-        );
+        const response = await axios.get(url);
         setCartItems(response.data);
       } catch (error) {
         console.error(error);
@@ -18,7 +17,7 @@ function Cart() {
     };
 
     fetchCartItems();
-  }, []);
+  }, [url]);
 
   return (
     <div className="posts">

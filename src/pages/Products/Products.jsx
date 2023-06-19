@@ -22,7 +22,6 @@ function Products() {
     fetchData();
   }, [url]);
 
-  console.log(posts);
   if (!posts) return null;
   return (
     <div className="posts">

@@ -14,6 +14,7 @@ import Cart from "./pages/Cart/Cart";
 import Home from "./pages/Home/Home";
 import ProductDetails from "./pages/Productdetails/Productdetail";
 import Products from "./pages/Products/Products";
+import WishList from "./pages/WishList/WishList";
 // import
 // import LoginLogou
 
@@ -28,8 +29,8 @@ export function App() {
           <Route path="/products?q=jacket" element={<Products />} />
           <Route path="/products?q=pants" element={<Products />} />
           <Route path="/products?q=shoes" element={<Products />} />
-          <Route path="/likes" element={<Home />} />
-          <Route path="/cart" element={<Cart />} />
+          <Route path="/liked" element={<WishList />} />
+          <Route path="/carts" element={<Cart />} />
           <Route path="/login" element={<Login />} />
           <Route path="/product/:id" element={<ProductDetails />} />
           <Route path="*" element={<h1>Page Not Found</h1>} />

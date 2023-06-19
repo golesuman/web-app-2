@@ -57,7 +57,7 @@ function Navbar() {
           {/* <SearchOutlinedIcon /> */}
         </div>
         <div className="icons">
-          <Link style={{ textDecoration: "none", color: "black" }} to="/cart">
+          <Link style={{ textDecoration: "none", color: "black" }} to="/carts">
             <ShoppingBagOutlinedIcon />
           </Link>
           <Link style={{ textDecoration: "none", color: "black" }} to="/liked">

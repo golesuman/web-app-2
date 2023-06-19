@@ -16,12 +16,12 @@ function Home() {
             {/* <p>1000</p> */}
           </div>
           <div className="img-description">
-            <img class="featured-img" src="images/sportswear.jpg" alt="" />
+            <img className="featured-img" src="images/sportswear.jpg" alt="" />
             <h5> Sports wear</h5>
             {/* <p>1200</p> */}
           </div>
           <div className="img-description">
-            <img class="featured-img" src="images/jacket.jpg" alt="" />
+            <img className="featured-img" src="images/jacket.jpg" alt="" />
             <h5> Nike Jacket</h5>
             {/* <p>1300</p> */}
           </div>
