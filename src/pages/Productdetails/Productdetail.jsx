@@ -76,7 +76,6 @@ function addToCart(productId) {
     .then((response) => {
       console.log("Product added to cart:", response.data);
       // Add any additional logic or UI updates after successful API call
-      alert("Product added to cart");
       window.location.href = "/products";
     })
     .catch((error) => {

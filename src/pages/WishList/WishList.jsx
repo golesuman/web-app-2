@@ -85,17 +85,21 @@ const handleRemove = async (id) => {
   }
 };
 
-function Cart() {
+function WishList() {
   // const history = useHistory();
-  const [cartItems, setCartItems] = useState([]);
+  const [wishListItems, setWishListItems] = useState([]);
   const url = "http://localhost:8000/api/ecommerce/wishlists";
 
   useEffect(() => {
     const fetchCartItems = async () => {
       try {
         const response = await axios.get(url);
-        setCartItems(response.data);
+        setWishListItems(response.data);
+        if (response.statusCode === 401) {
+          window.location.href = "/products";
+        }
       } catch (error) {
+        window.location.href = "/products";
         console.error(error);
       }
     };
@@ -105,7 +109,7 @@ function Cart() {
 
   return (
     <div className="posts">
-      {cartItems.map((post) => (
+      {wishListItems.map((post) => (
         <div key={post.id} className="post">
           <Link
             style={{ textDecoration: "none", color: "black" }}
@@ -140,4 +144,4 @@ function Cart() {
   );
 }
 
-export default Cart;
+export default WishList;
