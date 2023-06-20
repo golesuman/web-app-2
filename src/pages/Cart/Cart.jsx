@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+
 const handlePayment = (id, price) => {
   const form = document.createElement("form");
   form.setAttribute("method", "POST");
@@ -65,20 +66,9 @@ const handlePayment = (id, price) => {
 
 const handleRemove = async (id) => {
   try {
-    await axios.delete(`http://localhost:8000/api/ecommerce/wishlists/${id}`);
+    await axios.delete(`/ecommerce/wishlists/${id}`);
     console.log("Product removed from wishlist");
-    const popUp = document.createElement("div");
-    popUp.classList.add("pop-up");
-    popUp.textContent = "Product removed from wishlist";
-    document.body.appendChild(popUp);
-
-    // Set the pop-up to disappear after 2 seconds
-    setTimeout(() => {
-      popUp.remove();
-    }, 2000);
-
-    // Redirect the user to the wishlists page
-    window.location.href = "/liked";
+    window.location.href = "/carts";
   } catch (error) {
     console.log("Error removing product from cart:", error);
   }
@@ -89,9 +79,7 @@ function Cart() {
   useEffect(() => {
     const fetchCartItems = async () => {
       try {
-        const response = await axios.get(
-          "http://localhost:8000/api/ecommerce/carts"
-        );
+        const response = await axios.get("ecommerce/carts");
         setCartItems(response.data);
       } catch (error) {
         console.error(error);
@@ -101,40 +89,42 @@ function Cart() {
     fetchCartItems();
   }, []);
 
-  return (
-    <div className="posts">
-      {cartItems.map((post) => (
-        <div key={post.id} className="post">
-          <Link style={{ textDecoration: "none", color: "black" }}>
-            <img
-              className="product-image"
-              src={`http://localhost:8000/media/${post.product.image_url}`}
-              alt="No image found"
-            />
-            <div className="description">
-              <h2>{post.product.name}</h2>
-              <div className="button">
-                <button
-                  className="buy-now"
-                  onClick={() => handleRemove(post.id)}
-                >
-                  Remove
-                </button>
-                <button
-                  className="buy-now"
-                  onClick={() => handlePayment(post.id, post.product.price)}
+  if (cartItems != undefined) {
+    return (
+      <div className="posts">
+        {cartItems.map((post) => (
+          <div key={post.id} className="post">
+            <Link style={{ textDecoration: "none", color: "black" }}>
+              <img
+                className="product-image"
+                src={`http://localhost:8000/media/${post.product.image_url}`}
+                alt="No image found"
+              />
+              <div className="description">
+                <h2>{post.product.name}</h2>
+                <div className="button">
+                  <button
+                    className="buy-now"
+                    onClick={() => handleRemove(post.id)}
+                  >
+                    Remove
+                  </button>
+                  <button
+                    className="buy-now"
+                    onClick={() => handlePayment(post.id, post.product.price)}
 
-                  // onClick={() => handlePayment(id, productDetails.price)}
-                >
-                  BUY NOW
-                </button>
+                    // onClick={() => handlePayment(id, productDetails.price)}
+                  >
+                    BUY NOW
+                  </button>
+                </div>
               </div>
-            </div>
-          </Link>
-        </div>
-      ))}
-    </div>
-  );
+            </Link>
+          </div>
+        ))}
+      </div>
+    );
+  }
 }
 
 export default Cart;

@@ -66,18 +66,8 @@ const handlePayment = (id, price) => {
 
 const handleRemove = async (id) => {
   try {
-    await axios.delete(`http://localhost:8000/api/ecommerce/wishlists/${id}`);
+    await axios.delete(`ecommerce/wishlists/${id}`);
     console.log("Product removed from wishlist");
-    const popUp = document.createElement("div");
-    popUp.classList.add("pop-up");
-    popUp.textContent = "Product removed from wishlist";
-    document.body.appendChild(popUp);
-
-    // Set the pop-up to disappear after 2 seconds
-    setTimeout(() => {
-      popUp.remove();
-    }, 2000);
-
     // Redirect the user to the wishlists page
     window.location.href = "/liked";
   } catch (error) {
@@ -88,60 +78,57 @@ const handleRemove = async (id) => {
 function WishList() {
   // const history = useHistory();
   const [wishListItems, setWishListItems] = useState([]);
-  const url = "http://localhost:8000/api/ecommerce/wishlists";
+  const url = "ecommerce/wishlists";
 
   useEffect(() => {
     const fetchCartItems = async () => {
       try {
         const response = await axios.get(url);
         setWishListItems(response.data);
-        if (response.statusCode === 401) {
-          window.location.href = "/products";
-        }
       } catch (error) {
-        window.location.href = "/products";
+        // window.location.href = "/products";
         console.error(error);
       }
     };
 
     fetchCartItems();
-  }, [url]);
-
-  return (
-    <div className="posts">
-      {wishListItems.map((post) => (
-        <div key={post.id} className="post">
-          <Link
-            style={{ textDecoration: "none", color: "black" }}
-            // to={`/product/${post.id}`}
-          >
-            <img
-              className="product-image"
-              src={`http://localhost:8000/media/${post.product.image_url}`}
-              alt="No image found"
-            />
-            <div className="description">
-              <h2>{post.product.name}</h2>
-              <div className="button">
-                <button
-                  className="buy-now"
-                  onClick={() => handleRemove(post.id)}
-                >
-                  Remove
-                </button>
-                <button
-                  className="buy-now"
-                  onClick={() => handlePayment(post.id, post.product.price)}
-                >
-                  BUY NOW
-                </button>
+  }, []);
+  if (wishListItems != undefined) {
+    return (
+      <div className="posts">
+        {wishListItems.map((post) => (
+          <div key={post.id} className="post">
+            <Link
+              style={{ textDecoration: "none", color: "black" }}
+              // to={`/product/${post.id}`}
+            >
+              <img
+                className="product-image"
+                src={`http://localhost:8000/media/${post.product.image_url}`}
+                alt="No image found"
+              />
+              <div className="description">
+                <h2>{post.product.name}</h2>
+                <div className="button">
+                  <button
+                    className="buy-now"
+                    onClick={() => handleRemove(post.id)}
+                  >
+                    Remove
+                  </button>
+                  <button
+                    className="buy-now"
+                    onClick={() => handlePayment(post.id, post.product.price)}
+                  >
+                    BUY NOW
+                  </button>
+                </div>
               </div>
-            </div>
-          </Link>
-        </div>
-      ))}
-    </div>
-  );
+            </Link>
+          </div>
+        ))}
+      </div>
+    );
+  }
 }
-
 export default WishList;
