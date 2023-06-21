@@ -1,5 +1,4 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
-
 .nav-bar {
   padding-top: 20px;
   display: flex;
@@ -58,6 +57,21 @@
       // Link {
       //   background-color: gray;
       // }
+
+      .dropdown-container {
+        position: relative;
+
+        .dropdown-menu {
+          position: absolute;
+          background-color: white;
+          width: 120px;
+          display: flex;
+          flex-direction: column;
+          padding: 10px;
+          right: 0;
+          top: 35px;
+        }
+      }
     }
     .icons:hover {
       cursor: pointer;

@@ -66,7 +66,7 @@ const handlePayment = (id, price) => {
 
 const handleRemove = async (id) => {
   try {
-    await axios.delete(`/ecommerce/wishlists/${id}`);
+    await axios.delete(`/ecommerce/cart/delete/${id}`);
     console.log("Product removed from wishlist");
     window.location.href = "/carts";
   } catch (error) {
@@ -104,7 +104,7 @@ function Cart() {
                 <h2>{post.product.name}</h2>
                 <div className="button">
                   <button
-                    className="buy-now"
+                    className="remove"
                     onClick={() => handleRemove(post.id)}
                   >
                     Remove
