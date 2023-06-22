@@ -1,4 +1,41 @@
-form {
-  margin: 300px;
-  justify-content: center;
+.loginForm {
+  justify-content: space-around;
+  border-radius: 5px;
+
+  h2 {
+    top: 259px;
+    margin-left: 45%;
+    display: inline;
+    position: relative;
+    text-decoration: center;
+    align-items: center;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+  }
+  form {
+    margin: 300px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    input {
+      padding: 10px;
+      margin-bottom: 10px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    button {
+      padding: 10px;
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+  }
 }
