@@ -110,14 +110,14 @@ function Orders() {
                     className="remove"
                     onClick={() => handleRemove(post.id)}
                   >
-                    Remove
+                    Cancel
                   </button>
-                  <button
+                  {/* <button
                     className="buy-now"
                     onClick={() => handlePayment(post.id, post.product.price)}
                   >
                     BUY NOW
-                  </button>
+                  </button> */}
                 </div>
               </div>
             </Link>

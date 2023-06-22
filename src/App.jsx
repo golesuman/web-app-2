@@ -15,6 +15,7 @@ import Home from "./pages/Home/Home";
 import Orders from "./pages/Orders/Orders";
 import ProductDetails from "./pages/Productdetails/Productdetail";
 import Products from "./pages/Products/Products";
+import Profile from "./pages/Profile/Profile";
 import WishList from "./pages/WishList/WishList";
 // import
 // import LoginLogou
@@ -34,7 +35,7 @@ export function App() {
           <Route path="/carts" element={<Cart />} />
           <Route path="/login" element={<Login />} />
           <Route path="/orders" element={<Orders />} />
-
+          <Route path="profile" element={<Profile />} />
           <Route path="/product/:id" element={<ProductDetails />} />
           <Route path="*" element={<h1>Page Not Found</h1>} />
         </Routes>

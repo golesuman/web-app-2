@@ -1,19 +1,19 @@
 import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlined";
 import PersonOutlineOutlinedIcon from "@mui/icons-material/PersonOutlineOutlined";
 import ShoppingBagOutlinedIcon from "@mui/icons-material/ShoppingBagOutlined";
-import axios from "axios";
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "./Navbar.scss";
 
 const handleProfile = async () => {
-  const url = "ecommerce/user-profile";
-  try {
-    const response = await axios.get(url);
-    console.log(response);
-  } catch (error) {
-    console.log(error);
-  }
+  // const url = "ecommerce/user-profile";
+  // try {
+  //   const response = await axios.get(url);
+  //   console.log(response);
+  // } catch (error) {
+  //   console.log(error);
+  // }
+  window.location.href("profile/");
 };
 function Navbar() {
   const [showDropdown, setShowDropdown] = useState(false);
@@ -86,7 +86,16 @@ function Navbar() {
             />
             {showDropdown && (
               <div className="dropdown-menu">
-                <div onClick={handleProfile}>My Profile</div>
+                <Link
+                  style={{
+                    textDecoration: "none",
+                    color: "black",
+                    listStyle: "none",
+                  }}
+                  to="/profile"
+                >
+                  My Profile
+                </Link>
                 <Link
                   style={{
                     textDecoration: "none",
