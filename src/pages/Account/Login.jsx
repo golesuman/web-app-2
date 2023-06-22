@@ -27,15 +27,15 @@ const Login = () => {
 
       // Redirect to protected route
       // Replace '/dashboard' with your desired protected route
-      // window.location.href = "/cart";
+      window.location.href = "/";
     } catch (error) {
       console.log(error);
     }
   };
 
   return (
-    <div>
-      <h2>Login</h2>
+    <div className="loginForm">
+      <h2>Login Form</h2>
       <form onSubmit={handleLogin}>
         <input
           type="text"

@@ -112,8 +112,6 @@ function Cart() {
                   <button
                     className="buy-now"
                     onClick={() => handlePayment(post.id, post.product.price)}
-
-                    // onClick={() => handlePayment(id, productDetails.price)}
                   >
                     BUY NOW
                   </button>

@@ -11,7 +11,7 @@ function Home() {
         </h2>
         <div className="featured">
           <div className="img-description">
-            <img class="featured-img" src="images/hoodies.jpg" alt="" />
+            <img className="featured-img" src="images/hoodies.jpg" alt="" />
             <h5>Hoodies for men</h5>
             {/* <p>1000</p> */}
           </div>

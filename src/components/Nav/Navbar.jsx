@@ -87,8 +87,26 @@ function Navbar() {
             {showDropdown && (
               <div className="dropdown-menu">
                 <div onClick={handleProfile}>My Profile</div>
-                <div>My Orders</div>
-                <div>Log In</div>
+                <Link
+                  style={{
+                    textDecoration: "none",
+                    color: "black",
+                    listStyle: "none",
+                  }}
+                  to="/orders"
+                >
+                  My Orders
+                </Link>
+                <Link
+                  style={{
+                    textDecoration: "none",
+                    color: "black",
+                    listStyle: "none",
+                  }}
+                  to="/login"
+                >
+                  <li className="item">Login</li>
+                </Link>
               </div>
             )}
           </div>

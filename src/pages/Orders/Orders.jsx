@@ -1,8 +1,9 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import "./WishList.scss";
-
+import "./Orders.scss";
+// import ;
+// from axios;
 const handlePayment = (id, price) => {
   const form = document.createElement("form");
   form.setAttribute("method", "POST");
@@ -67,42 +68,36 @@ const handlePayment = (id, price) => {
 
 const handleRemove = async (id) => {
   try {
-    await axios.delete(`ecommerce/wishlists/${id}`);
+    await axios.delete(`/ecommerce/cart/delete/${id}`);
     console.log("Product removed from wishlist");
-    // Redirect the user to the wishlists page
-    window.location.href = "/liked";
+    window.location.href = "/carts";
   } catch (error) {
     console.log("Error removing product from cart:", error);
   }
 };
 
-function WishList() {
-  // const history = useHistory();
-  const [wishListItems, setWishListItems] = useState([]);
-  const url = "ecommerce/wishlists";
+function Orders() {
+  const [orderItems, setOrderItems] = useState([]);
 
   useEffect(() => {
-    const fetchCartItems = async () => {
+    const fetchOrders = async () => {
       try {
-        const response = await axios.get(url);
-        setWishListItems(response.data);
+        const response = await axios.get("ecommerce/orders");
+        setOrderItems(response.data);
       } catch (error) {
-        // window.location.href = "/products";
         console.error(error);
       }
     };
 
-    fetchCartItems();
+    fetchOrders();
   }, []);
-  if (wishListItems != undefined) {
+  console.log(orderItems);
+  if (orderItems != undefined) {
     return (
       <div className="posts">
-        {wishListItems.map((post) => (
+        {orderItems.map((post) => (
           <div key={post.id} className="post">
-            <Link
-              style={{ textDecoration: "none", color: "black" }}
-              // to={`/product/${post.id}`}
-            >
+            <Link style={{ textDecoration: "none", color: "black" }}>
               <img
                 className="product-image"
                 src={`http://localhost:8000/media/${post.product.image_url}`}
@@ -131,5 +126,7 @@ function WishList() {
       </div>
     );
   }
+  //   return <div>Orders</div>;
 }
-export default WishList;
+
+export default Orders;
