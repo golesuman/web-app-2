@@ -1,9 +1,3 @@
-import axios from "axios";
-import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
-import "./Orders.scss";
-// import ;
-// from axios;
 const handlePayment = (id, price) => {
   const form = document.createElement("form");
   form.setAttribute("method", "POST");
@@ -66,67 +60,4 @@ const handlePayment = (id, price) => {
   form.submit();
 };
 
-const handleRemove = async (id) => {
-  try {
-    await axios.delete(`/ecommerce/cart/delete/${id}`);
-    console.log("Product removed from wishlist");
-    window.location.href = "/carts";
-  } catch (error) {
-    console.log("Error removing product from cart:", error);
-  }
-};
-
-function Orders() {
-  const [orderItems, setOrderItems] = useState([]);
-
-  useEffect(() => {
-    const fetchOrders = async () => {
-      try {
-        const response = await axios.get("ecommerce/orders");
-        setOrderItems(response.data);
-      } catch (error) {
-        console.error(error);
-      }
-    };
-
-    fetchOrders();
-  }, []);
-  console.log(orderItems);
-  if (orderItems != undefined) {
-    return (
-      <div className="posts">
-        {orderItems.map((post) => (
-          <div key={post.id} className="post">
-            <Link style={{ textDecoration: "none", color: "black" }}>
-              <img
-                className="product-image"
-                src={`http://localhost:8000/media/${post.product.image_url}`}
-                alt="No image found"
-              />
-              <div className="description">
-                <h2>{post.product.name}</h2>
-                <div className="button">
-                  <button
-                    className="remove"
-                    onClick={() => handleRemove(post.id)}
-                  >
-                    Cancel
-                  </button>
-                  <button
-                    className="buy-now"
-                    onClick={() => handlePayment(post.id, post.product.price)}
-                  >
-                    CheckOut
-                  </button>
-                </div>
-              </div>
-            </Link>
-          </div>
-        ))}
-      </div>
-    );
-  }
-  //   return <div>Orders</div>;
-}
-
-export default Orders;
+export default handlePayment;
